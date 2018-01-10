@@ -4,15 +4,15 @@ export class APICall {
     this.questionCategory = category;
     this.questionDifficulty = difficulty;
     this.answersType = answersType;
-    this.url = '';
+    this.url = 'https://opentdb.com/api.php?amount=10';
   }
-  callAPI() {
-    $.get(
-      "https://opentdb.com/api.php?amount=10",
-      function(data) {
+  callAPI(input) {
+    let thing = $.get(
+      input,function(data) {
         console.log(data.results);
+        return data;
       }
     );
-    return data;
+    return thing
   }
 }
