@@ -50,8 +50,10 @@ $(document).ready(function () {
     console.log(numberOfQuestion, category, difficulty);
     var user = new _trivia.APICall(numberOfQuestion, category, difficulty);
     console.log(user.url);
-    var gameBank = [];
+    $(".output-1").show();
     user.callAPI(user.url, function (data) {
+      var gameBank = [];
+
       var _loop = function _loop(i) {
         answers.push(data[i].correct_answer);
         data[i].incorrect_answers.push(data[i].correct_answer);
@@ -66,31 +68,29 @@ $(document).ready(function () {
       for (var i = 0; i < data.length; i++) {
         _loop(i);
       }
-      var appendFunction = function appendFunction(gameBank) {
-        for (var i = 0; i < gameBank.length; i++) {
-          $('.questionArea').append('<form class="output output-' + (i + 1) + '">\n            <h1 class="question">' + gameBank[i][0] + '</h1>\n            <div class="form-check">\n            <input class="form-check-input" type="radio" name="answer' + i + '" id="answer1" value="' + gameBank[i][2][0] + '" checked>\n            <label class="form-check-label" for="answer1" class="answer1">\n            ' + gameBank[i][2][0] + '\n            </label>\n            </div>\n            <div class="form-check">\n            <input class="form-check-input" type="radio" name="answer' + i + '" id="answer2" value=" ' + gameBank[i][2][1] + '">\n            <label class="form-check-label" for="answer2" class="answer2">\n            ' + gameBank[i][2][1] + '\n            </label>\n            </div>\n            <div class="form-check">\n            <input class="form-check-input" type="radio" name="answer' + i + '" id="answer3" value="' + gameBank[i][2][2] + '">\n            <label class="form-check-label" for="answer3" class="answer3">\n            ' + gameBank[i][2][2] + '\n            </label>\n            </div>\n            <div class="form-check">\n            <input class="form-check-input" type="radio" name="answer' + i + '" id="answer4" value="' + gameBank[i][2][3] + '">\n            <label class="form-check-label" for="answer4" class="answer4">\n            ' + gameBank[i][2][3] + '\n            </label>\n            </div>\n            <button class="btn btn-info output-' + (i + 1) + '"type="submit">Submit Answer</button>\n            </form>');
-          $(".output-1").show();
-        }
-      };
-      appendFunction(gameBank);
+      console.log(gameBank[0][0]);
+
+      for (var i = 0; i < gameBank.length; i++) {
+        $('.question' + i).append(gameBank[i][0]);
+        $('.output-' + i + '.answer1').append(gameBank[i][3][0]);
+        $('.output-' + i + '.answer2').append(gameBank[i][3][1]);
+        $('.output-' + i + '.answer3').append(gameBank[i][3][2]);
+        $('.output-' + i + '.answer4').append(gameBank[i][3][3]);
+      }
     });
   });
-  $(".question").click(function () {
-    alert('hello');
-  });
   $("form.output-1").submit(function (event) {
-    alert("hi");
     event.preventDefault();
     // let answer = $(`input[type='radio'][name='answer1']:checked`).val();
     //   if (answer === answers[0]){
     //     score++;
     //   }
-    // number++;
-    // $(".output-1").hide();
+    //   number++;
+    $(".output-1").hide();
     // if (number === answers.length) {
     //   $(".end-screen").show();
     // } else {
-    // $(".output-2").show();
+    $(".output-2").show();
     // }
   });
   $(".output-2").submit(function (event) {
