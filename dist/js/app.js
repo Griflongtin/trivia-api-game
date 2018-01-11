@@ -39,6 +39,7 @@ var _trivia = require('./../src/js/trivia.js');
 
 var number = 1;
 var answers = [];
+var questions = [];
 var score = 0;
 $(document).ready(function () {
   $(".form").submit(function (event) {
@@ -63,35 +64,41 @@ $(document).ready(function () {
         }
         myFunction1();
         gameBank.push([data[i].question, data[i].correct_answer, thing]);
+        questions.push(thing);
       };
 
       for (var i = 0; i < data.length; i++) {
         _loop(i);
       }
-      console.log(gameBank[0][0]);
+      console.log(gameBank);
+      console.log(gameBank[0][2][0]);
 
       for (var i = 0; i < gameBank.length; i++) {
-        $('.question' + i).append(gameBank[i][0]);
-        $('.output-' + i + '.answer1').append(gameBank[i][3][0]);
-        $('.output-' + i + '.answer2').append(gameBank[i][3][1]);
-        $('.output-' + i + '.answer3').append(gameBank[i][3][2]);
-        $('.output-' + i + '.answer4').append(gameBank[i][3][3]);
+        $('.question' + (i + 1)).append(gameBank[i][0]);
+        $('.output-' + (i + 1) + ' .answer1').append(gameBank[i][2][0]);
+        $('.output-' + (i + 1) + ' .answer2').append(gameBank[i][2][1]);
+        $('.output-' + (i + 1) + ' .answer3').append(gameBank[i][2][2]);
+        $('.output-' + (i + 1) + ' .answer4').append(gameBank[i][2][3]);
       }
     });
+    console.log(answers);
+    console.log(questions);
   });
   $("form.output-1").submit(function (event) {
     event.preventDefault();
-    // let answer = $(`input[type='radio'][name='answer1']:checked`).val();
-    //   if (answer === answers[0]){
-    //     score++;
-    //   }
-    //   number++;
+    var answer = $('input[type=\'radio\'][name=\'question1\']:checked').val();
+    console.log(questions[0][answer]);
+    if (questions[0][answer] === answers[0]) {
+      score++;
+      $('.score').text(score);
+    }
+    number++;
     $(".output-1").hide();
-    // if (number === answers.length) {
-    //   $(".end-screen").show();
-    // } else {
-    $(".output-2").show();
-    // }
+    if (number === answers.length + 1) {
+      $(".end-screen").show();
+    } else {
+      $(".output-2").show();
+    }
   });
   $(".output-2").submit(function (event) {
     event.preventDefault();
