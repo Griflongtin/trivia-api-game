@@ -1,3 +1,55 @@
+
+body{
+
+  background: #B993D6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1{
+  text-align: center;
+  color: #00d2ff;
+  font-size: 72px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border: 18px Solid #00d2ff;
+  border-style: ridge;
+}
+.number-input input{
+  width: 70px;
+}
+.score {
+  text-align: center;
+  font-size: 30px;
+  color: #00d2ff;
+}
+.question-area, .output{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border: 18px Solid #00d2ff;
+  border-style: ridge;
+  text-align: center;
+}
 .output {
   display: none;
+}
+
+.end-screen{
+  display: none;
+  background-image: url("./../img/endgame.jpg");
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+
+
 }

@@ -54,6 +54,7 @@ $(document).ready(function() {
     $(".output-1").hide();
     if (number === (answers.length + 1) ) {
       $(".end-screen").show();
+      $(".container").hide();
     } else {
       $(".output-2").show();
     }
@@ -188,6 +189,7 @@ $(document).ready(function() {
       number++;
     $(".output-10").hide();
     $(".end-screen").show();
+    $(".container").hide();
 
   });
 
