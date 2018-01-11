@@ -10,13 +10,13 @@
   </head>
 </head>
   <body>
-   <div class="container">
-    <form id="form">
-         <div class="number-input">
-           <label>How many question?</label>
-           <input id="number-of-question" type="number" min="1" max="10" placeholder="1-10">
-         </div>
-         <div class="form-group">
+    <div class="container">
+      <form class="form">
+        <div class="number-input">
+          <label>How many question?</label>
+          <input id="number-of-question" type="number" min="1" max="10" placeholder="1-10">
+        </div>
+        <div class="form-group">
            <label>Select Category:</label>
            <select class="form-control" id="category">
              <option value="">Any</option>
@@ -46,52 +46,231 @@
              <option value="&category=32">Entertainment: Cartoon & Animations</option>
            </select>
          </div>
-         <div class="form-group">
-           <label>Select Difficulty:</label>
-           <select class="form-control" id="difficulty">
-             <option value="">Any</option>
-             <option value="&difficulty=easy">Easy</option>
-             <option value="&difficulty=medium">Medium</option>
-             <!-- <option value="&difficulty=hard">Hard</option> -->
-           </select>
-         </div>
-         <button type="submit" id="form-button" class="btn btn-info btn-block">Start Game</button>
-       </form>
-    <div class="score"></div>
-    <div class="questionArea">
-      
+        <div class="form-group">
+          <label>Select Difficulty:</label>
+          <select class="form-control" id="difficulty">
+            <option value="">Any</option>
+            <option value="&difficulty=easy">Easy</option>
+            <option value="&difficulty=medium">Medium</option>
+            <!-- <option value="&difficulty=hard">Hard</option> -->
+          </select>
+        </div>
+        <button type="submit"class="form btn btn-info btn-block">Start Game</button>
+      </form>
+      <div class="score"></div>
+      <div class="questionArea">
+        <!-- Question 1 -->
+        <form class="output output-1">
+          <h1 class="question1"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 2 -->
+        <form class="output output-2">
+          <h1 class="question2"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 3 -->
+        <form class="output output-3">
+          <h1 class="question3"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 4 -->
+        <form class="output output-4">
+          <h1 class="question4"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question4" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question4" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question4" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question4" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 5 -->
+        <form class="output output-5">
+          <h1 class="question5"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question5" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question5" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question5" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question5" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 6 -->
+        <form class="output output-6">
+          <h1 class="question6"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question6" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question6" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question6" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question6" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 7 -->
+        <form class="output output-7">
+          <h1 class="question7"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question7" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question7" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question7" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question7" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 8 -->
+        <form class="output output-8">
+          <h1 class="question8"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question8" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question8" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question8" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question8" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 9 -->
+        <form class="output output-9">
+          <h1 class="question9"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question9" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question9" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question9" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question9" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+        <!-- Question 10 -->
+        <form class="output output-10">
+          <h1 class="question10"></h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="answer1" value="" checked>
+            <label class="form-check-label" for="answer1" class="answer1"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="answer2" value="">
+            <label class="form-check-label" for="answer2" class="answer2"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="answer3" value="">
+            <label class="form-check-label" for="answer3" class="answer3"></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="answer4" value="">
+            <label class="form-check-label" for="answer4" class="answer4"></label>
+          </div>
+          <button class="btn btn-info"type="submit">Submit Answer</button>
+        </form>
+
+      </div>
     </div>
-    <!-- <form class="output output-1">
-      <h1 class="question"></h1>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="answer1" id="answer1" value="option1" checked>
-         <label class="form-check-label" for="answer1" class="answer1">
-         </label>
-       </div>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="answer2" id="answer2" value="option2" checked>
-         <label class="form-check-label" for="answer2" class="answer2">
-         </label>
-       </div>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="answer3" id="answer3" value="option3" checked>
-         <label class="form-check-label" for="answer3" class="answer3">
-         </label>
-       </div>
-       <div class="form-check">
-         <input class="form-check-input" type="radio" name="answer4" id="answer4" value="option4" checked>
-         <label class="form-check-label" for="answer4" class="answer4">
-         </label>
-       </div>
-       <button class="btn btn-info btn[i]"type="submit" name="button">Submit Answer</button>
-    </form> -->
-
-
-
-
-
-
-
-     </div>
   </body>
 </html>

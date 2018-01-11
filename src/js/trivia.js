@@ -8,7 +8,7 @@ export class APICall {
 
   callAPI(input, callback) {
     $.get(input,((data) => {
-      console.log(data.results);
+      // console.log(data.results);
       callback(data.results);
       })
     );
