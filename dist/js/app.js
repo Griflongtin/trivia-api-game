@@ -10,31 +10,21 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var APICall = exports.APICall = function () {
-  function APICall(number, category, difficulty, answersType) {
+  function APICall(number, category, difficulty) {
     _classCallCheck(this, APICall);
 
     this.questionNumbers = number;
     this.questionCategory = category;
     this.questionDifficulty = difficulty;
-    this.answersType = answersType;
-    this.url = "https://opentdb.com/api.php?amount=" + this.questionNumbers + "&category=" + this.questionCategory + "&difficulty=" + this.questionDifficulty + "&type=" + this.answersType;
-    this.array = [];
-
-    // console.log(this.array);
+    this.url = "https://opentdb.com/api.php?amount=" + this.questionNumbers + this.questionCategory + this.questionDifficulty + "&type=multiple";
   }
 
   _createClass(APICall, [{
     key: "callAPI",
     value: function callAPI(input, callback) {
-      var _this = this;
-
       $.get(input, function (data) {
         console.log(data.results);
         callback(data.results);
-        // console.log(data.results, "1");
-        _this.array.push(data.results[0]);
-        // console.log(array, "3");
-        // this.runCool(data);
       });
     }
   }]);
@@ -48,14 +38,31 @@ var APICall = exports.APICall = function () {
 var _trivia = require('./../src/js/trivia.js');
 
 $(document).ready(function () {
-  var user = new _trivia.APICall(10, 15, 'hard', 'multiple');
-  user.callAPI(user.url, function (data) {
-    var gameBank = [];
-    for (var i = 0; i < data.length; i++) {
-      data[i].incorrect_answers.push(data[i].correct_answer);
-      gameBank.push([data[i].question, data[i].correct_answer, data[i].incorrect_answers]);
+  $("#form").submit(function (event) {
+    event.preventDefault();
+    var numberOfQuestion = $('#number-of-question').val();
+    var category = $('#category').val();
+    var difficulty = $('#difficulty').val();
+
+    var user = new _trivia.APICall(numberOfQuestion, category, difficulty);
+    user.callAPI(user.url, function (data) {
+      var gameBank = [];
+
+      var _loop = function _loop(i) {
+        data[i].incorrect_answers.push(data[i].correct_answer);
+        var thing = data[i].incorrect_answers;
+        function myFunction1() {
+          thing.sort();
+        }
+        myFunction1();
+        gameBank.push([data[i].question, data[i].correct_answer, thing]);
+      };
+
+      for (var i = 0; i < data.length; i++) {
+        _loop(i);
+      };
       console.log(gameBank);
-    };
+    });
   });
 });
 
