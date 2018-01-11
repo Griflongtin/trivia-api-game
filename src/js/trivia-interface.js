@@ -1,4 +1,4 @@
-import { APICall } from './../src/js/trivia.js';
+   import { APICall } from './../src/js/trivia.js';
 
 $(document).ready(function() {
   $("#form").submit(function(event) {
